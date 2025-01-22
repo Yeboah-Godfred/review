@@ -1,10 +1,15 @@
 import Header from "./components/Header";
+import FeedbackItem from "./components/FeedbackItem";
 
 function App() {
   return (
-    <div className="container">
-      <Header heading="Feedback Ratings"/>
-    </div>
+    <>
+      <Header heading="Feedback & Ratings"/>
+      <div className="container-app">
+        <FeedbackItem />
+      </div>
+    </>
+    
   );
 }
 
