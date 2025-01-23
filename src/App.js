@@ -8,11 +8,17 @@ function App() {
 
   const [feedback, setFeedback] = useState(FeedbackData);
 
+  const deleteFeedback = (id) => {
+    if(window.confirm("Are you sure you want to delete?")){
+      setFeedback(feedback.filter((item) => item.id !== id))
+    }
+  }
+
   return (
     <>
       <Header heading="Feedback & Ratings"/>
       <div className="container-app">
-        <FeedbackList feedback={feedback}/>
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
       </div>
     </>
     
