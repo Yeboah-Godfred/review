@@ -29,15 +29,17 @@ function App() {
       <Header heading="Feedback & Ratings"/>
       <div className="container-app">
         <Routes>
-           <Route exact path="/">
-            <FeedbackForm handleAdd={addFeedback}/>     
-            <FeedbackStats feedback={feedback}/>
-            <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+          <Route exact path="/" element={
+            <>
+              <FeedbackForm handleAdd={addFeedback}/>     
+              <FeedbackStats feedback={feedback}/>
+              <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+            </>
+          }>
           </Route> 
         
-          <Route path="/about" Component={AboutPage}/>
+          <Route path="/about" element={<AboutPage />}/>
         </Routes>
-
       </div>
     </Router>
     
